@@ -5,13 +5,10 @@ export default [{
 	path : '/',
 	name : 'app',
 	redirect : '/home',
-	children : [
-		{
-			path : '/home',
-			name : 'home',
-			component : home
-		}
-	]
+}, {
+	path : '/home',
+	name : 'home',
+	component : home
 }, {
 	path : '*',
 	redirect : '/404'

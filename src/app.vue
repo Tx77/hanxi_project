@@ -3,9 +3,8 @@
 		<el-container class="hx-template-container">
 			<el-header class="hx-template-header">
 				<div class="hx-logo"></div>
-				<div style="float: right; width: calc(100% - 200px);">
+				<div style="float: right; width: calc(100% - 200px);position: relative;">
 					<el-menu
-						class="el-menu-demo"
 						mode="horizontal"
 						background-color="#545c64"
 						text-color="#fff"
@@ -26,11 +25,19 @@
 						<el-menu-item index="3" disabled>消息中心</el-menu-item>
 						<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
 					</el-menu>
+					<div class="login-out-style">
+						<i class="el-icon-back"></i>
+						<span>退出登录</span>
+					</div>
 				</div>
 			</el-header>
 			<el-container style="height: 100%;">
 				<el-aside class="hx-template-aside">
-					<el-menu class="hx-aside-menu">
+					<el-menu
+						class="hx-aside-menu"
+						background-color="#545c64"
+						text-color="#fff"
+						active-text-color="#ffd04b">
 						<el-submenu index="1">
 							<template slot="title">
 								<i class="el-icon-location"></i>
@@ -64,7 +71,9 @@
 					</el-menu>
 				</el-aside>
 				<el-main class="hx-template-main">
-					<router-view></router-view>
+					<transition name="fade" mode="out-in" appear>
+						<router-view></router-view>
+					</transition>
 				</el-main>
 			</el-container>
 		</el-container>
@@ -94,6 +103,18 @@
 				width: 200px;
 				height: 100%;
 				float: left;
+			}
+			.login-out-style{
+				position: absolute;
+				right: 20px;
+				top: 0;
+				line-height: 60px;
+				cursor: pointer;
+				color: #ffffff;
+				font-size: 14px;
+			}
+			.login-out-style:hover{
+				color: rgb(255, 208, 75);
 			}
 		}
 		.hx-template-aside{
