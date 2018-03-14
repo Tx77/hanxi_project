@@ -3,11 +3,15 @@ import notfound from '../views/common/notfound.vue';
 
 export default [{
 	path : '/',
-	name : 'app'
-},{
-	path : '/home',
-	name : 'home',
-	component : home
+	name : 'app',
+	redirect : '/home',
+	children : [
+		{
+			path : '/home',
+			name : 'home',
+			component : home
+		}
+	]
 }, {
 	path : '*',
 	redirect : '/404'

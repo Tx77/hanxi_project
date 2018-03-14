@@ -13,7 +13,7 @@ import utils from './utils/utils';
 //公用JS
 import './common.js';
 //公用LESS
-import './common.less';
+import './style/common.less';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
