@@ -1,9 +1,12 @@
 <template>
 	<div>
+		<!--Container-->
 		<el-container class="hx-template-container">
+			<!--Header-->
 			<el-header class="hx-template-header">
 				<div class="hx-logo"></div>
 				<div style="float: right; width: calc(100% - 200px);position: relative;">
+					<!--Header Menu-->
 					<el-menu
 						mode="horizontal"
 						background-color="#545c64"
@@ -34,8 +37,12 @@
 					</div>
 				</div>
 			</el-header>
+
+			<!--Container children-->
 			<el-container style="height: 100%;">
+				<!--Aside-->
 				<el-aside class="hx-template-aside">
+					<!--Aside Menu-->
 					<el-menu
 						class="hx-aside-menu"
 						background-color="#545c64"
@@ -73,15 +80,20 @@
 						</el-menu-item>
 					</el-menu>
 				</el-aside>
+
+				<!--Main-->
 				<el-main class="hx-template-main">
 					<transition name="fade" mode="out-in" appear>
+						<!--Router View-->
 						<router-view></router-view>
 					</transition>
 				</el-main>
+
 			</el-container>
 			<!--<el-footer class="hx-template-footer">-->
 			<!--</el-footer>-->
 		</el-container>
+
 		<el-dialog
 			class="hx-login-out-template"
 			title="提示"

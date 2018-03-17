@@ -1,5 +1,8 @@
 import Vue from 'vue';
 
+/**
+ * 拦截器
+ */
 Vue.http.interceptors.push(function (req,next) {
 	let isToken = this.$store.state.isToken;
 	//根据token的状态进行拦截或通过操作
