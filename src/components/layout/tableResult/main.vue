@@ -1,5 +1,5 @@
 <template>
-  <div class="dl-table-result" v-loading.body="loading">
+  <div class="hx-table-result" v-loading.body="loading">
     <div class="action clearfix spacing-md">
       <slot name="action"></slot>
     </div>
@@ -25,7 +25,7 @@
             :total="pageInfo.total"
             :layout="(pageTotal ? 'total,' : '') + 'sizes,prev,pager,next,jumper'"
             :page-sizes="pageSizes"
-            class="fr" >
+            class="fr mgt10">
           </el-pagination>
         </el-col>
       </el-row>
@@ -36,7 +36,7 @@
 
 <script>
   export default {
-    name: 'DlTableResult',
+    name: 'HxTableResult',
     props: {
       loading: {
         type: Boolean,
@@ -80,10 +80,5 @@
 </script>
 
 <style lang="less" scoped>
-  .dl-table-result {
-    margin: 8px 0;
-    padding: 20px 10px;
-    border-radius: 6px;
-    border: 1px solid #dfe6ec;
-  }
+
 </style>

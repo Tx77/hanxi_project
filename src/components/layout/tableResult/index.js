@@ -1,8 +1,8 @@
-import DlTableResult from "./main.vue"
+import HxTableResult from "./main.vue"
 
 /* istanbul ignore next */
-DlTableResult.install = function(Vue) {
-  Vue.component(DlTableResult.name, DlTableResult)
+HxTableResult.install = function(Vue) {
+  Vue.component(HxTableResult.name, HxTableResult)
 }
 
-export default DlTableResult
+export default HxTableResult

@@ -6,6 +6,6 @@
 
 <script>
   export default {
-    name: 'DlTableResultCol'
+    name: 'HxTableResultCol'
   }
 </script>

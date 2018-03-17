@@ -1,8 +1,8 @@
-import DlTableResultCol from './main.vue'
+import HxTableResultCol from './main.vue'
 
 /* istanbul ignore next */
-DlTableResultCol.install = function(Vue) {
-  Vue.component(DlTableResultCol.name, DlTableResultCol)
+HxTableResultCol.install = function(Vue) {
+  Vue.component(HxTableResultCol.name, HxTableResultCol)
 }
 
-export default DlTableResultCol
+export default HxTableResultCol

@@ -25,9 +25,12 @@
 						<el-menu-item index="3" disabled>消息中心</el-menu-item>
 						<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
 					</el-menu>
-					<div class="login-out-style" @click="dialogVisible = true;">
-						<i class="el-icon-back"></i>
-						<span>退出登录</span>
+					<div class="hx-template-header-right">
+						<p class="hx-account align-center">田鑫鑫</p>
+						<div class="login-out-style" @click="dialogVisible = true;">
+							<i class="el-icon-back"></i>
+							<span>退出登录</span>
+						</div>
 					</div>
 				</div>
 			</el-header>
@@ -78,13 +81,13 @@
 			</el-container>
 		</el-container>
 		<el-dialog
-			class="hx-login-out-template align-center"
+			class="hx-login-out-template"
 			title="提示"
 			:visible.sync="dialogVisible"
 			width="30%"
 			:close-on-click-modal="false"
 			:close-on-press-escape="false">
-			<h2>确认退出登录？</h2>
+			<h3 class="align-center">确认退出服务加？</h3>
 			<span slot="footer" class="dialog-footer">
 				<el-button
 					size="small"
@@ -133,7 +136,7 @@
 				height: 100%;
 				float: left;
 			}
-			.login-out-style{
+			.hx-template-header-right{
 				position: absolute;
 				right: 20px;
 				top: 0;
@@ -141,9 +144,19 @@
 				cursor: pointer;
 				color: #ffffff;
 				font-size: 14px;
-			}
-			.login-out-style:hover{
-				color: rgb(255, 208, 75);
+				display: flex;
+				.hx-account{
+					margin-right: 10px;
+					color: rgb(255, 208, 75);
+					width: 100px;
+					overflow: hidden;
+					-ms-text-overflow: ellipsis;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+				.login-out-style:hover{
+					color: rgb(255, 208, 75);
+				}
 			}
 		}
 		.hx-template-aside{

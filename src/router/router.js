@@ -1,4 +1,4 @@
-import login from '../views/business/login.vue';
+import login from '../login.vue';
 import home from '../views/business/home.vue';
 import app from '../app.vue';
 import notfound from '../views/common/notfound.vue';
