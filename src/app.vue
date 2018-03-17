@@ -79,6 +79,8 @@
 					</transition>
 				</el-main>
 			</el-container>
+			<!--<el-footer class="hx-template-footer">-->
+			<!--</el-footer>-->
 		</el-container>
 		<el-dialog
 			class="hx-login-out-template"
@@ -167,6 +169,9 @@
 			}
 		}
 		.hx-template-main{
+
+		}
+		.hx-template-footer{
 
 		}
 	}

@@ -21,7 +21,3 @@ Vue.prototype.formatDate = (timestamp) => {
   return year + "-" + month + "-" + date + "   " + hour + ":" + minute + ":" + second;
 };
 
-//公共提交mutations
-Vue.prototype.commonMutations = (_self, param, type) => {
-  _self.$store.commit(type, param);
-};
