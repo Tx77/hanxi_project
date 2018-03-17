@@ -25,7 +25,7 @@
 						<el-menu-item index="3" disabled>消息中心</el-menu-item>
 						<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
 					</el-menu>
-					<div class="login-out-style">
+					<div class="login-out-style" @click="dialogVisible = true;">
 						<i class="el-icon-back"></i>
 						<span>退出登录</span>
 					</div>
@@ -77,6 +77,28 @@
 				</el-main>
 			</el-container>
 		</el-container>
+		<el-dialog
+			class="hx-login-out-template align-center"
+			title="提示"
+			:visible.sync="dialogVisible"
+			width="30%"
+			:close-on-click-modal="false"
+			:close-on-press-escape="false">
+			<h2>确认退出登录？</h2>
+			<span slot="footer" class="dialog-footer">
+				<el-button
+					size="small"
+					type="primary"
+					@click="linkToLoginPage">
+					确 定
+				</el-button>
+				<el-button
+					size="small"
+					@click="dialogVisible = false;">
+					取 消
+				</el-button>
+			</span>
+		</el-dialog>
 	</div>
 </template>
 
@@ -84,8 +106,15 @@
 	export default {
 		data () {
 			return {
-
+				dialogVisible : false
 			};
+		},
+		methods : {
+			linkToLoginPage () {
+				this.$router.push({
+					name : 'login'
+				});
+			}
 		}
 	};
 </script>
@@ -126,6 +155,11 @@
 		}
 		.hx-template-main{
 
+		}
+	}
+	.hx-login-out-template{
+		.el-dialog__footer{
+			text-align: center;
 		}
 	}
 </style>
