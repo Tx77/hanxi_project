@@ -79,7 +79,7 @@
 		.hx-login-bg-top{
 			width: 100%;
 			height: 300px;
-			//background: linear-gradient(-100deg, #1cc7f2, #1265a6);
+			background: linear-gradient(-100deg, #1cc7f2, #1265a6);
 		}
 		.hx-login-bg-footer{
 			width: 100%;

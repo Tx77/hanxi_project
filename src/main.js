@@ -9,9 +9,9 @@ import Router from './router/router';
 import App from './app.vue';
 
 //自定义插件
-import utils from './utils/utils';
+import utils from './utils/javascript/utils';
 //公用JS
-import './common.js';
+import './utils/javascript/common.js';
 //公用LESS
 import './style/common.less';
 
