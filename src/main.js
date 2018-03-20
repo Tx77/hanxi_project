@@ -7,6 +7,8 @@ import axios from 'axios';
 import store from './vuex/store';
 import Router from './router/router';
 import components from './components';
+import nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 // 自定义插件
 import utils from './utils/javascript/utils';
@@ -28,6 +30,15 @@ Vue.config.productionTip = false;
 const router = new VueRouter({
 	mode : 'history',
 	routes : Router
+});
+
+router.beforeEach((to, from, next) => {
+	nprogress.start();
+	next();
+});
+
+router.afterEach(route => {
+	nprogress.done();
 });
 
 //实例化Vue
