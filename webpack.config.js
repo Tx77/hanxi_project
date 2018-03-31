@@ -41,8 +41,10 @@ module.exports = {
 		extensions: ['.js', '.vue','.css'],
 		// 别名，可以直接使用别名来代表设定的路径以及其他
 		alias: {
-			components: path.join(__dirname, './src/components'),
-			'vue$': 'vue/dist/vue.js'
+			'components' : path.join(__dirname, './src/components'),
+			'vue$' : 'vue/dist/vue.js',
+      'business' : path.join(__dirname, './src/views/business'),
+      'views' : path.join(__dirname, './src/views'),
 		}
 	},
 	plugins : [

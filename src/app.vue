@@ -8,25 +8,25 @@
 				<div style="float: right; width: calc(100% - 200px);position: relative;">
 					<!--Header Menu-->
 					<el-menu
+            :default-active="state.menuActive"
+            @select="select"
 						mode="horizontal"
 						background-color="#545c64"
 						text-color="#fff"
-						active-text-color="#ffd04b">
-						<el-menu-item index="1" @click="linkToAboutPage">处理中心</el-menu-item>
-						<el-submenu index="2">
-							<template slot="title">我的工作台</template>
-							<el-menu-item index="2-1">选项1</el-menu-item>
-							<el-menu-item index="2-2">选项2</el-menu-item>
-							<el-menu-item index="2-3">选项3</el-menu-item>
-							<el-submenu index="2-4">
-								<template slot="title">选项4</template>
-								<el-menu-item index="2-4-1">选项1</el-menu-item>
-								<el-menu-item index="2-4-2">选项2</el-menu-item>
-								<el-menu-item index="2-4-3">选项3</el-menu-item>
-							</el-submenu>
-						</el-submenu>
-						<el-menu-item index="3" disabled>消息中心</el-menu-item>
-						<el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item>
+						active-text-color="#ffd04b"
+            router>
+            <el-menu-item
+              v-for="item in menu"
+              :index="item.path"
+              :key="item.path"
+              v-text="item.name">
+            </el-menu-item>
+						<!--<el-menu-item index="1" @click="linkToSupplyCenterPage">供应中心</el-menu-item>-->
+						<!--<el-menu-item index="2" @click="linkToBarracksSysPage">营房系统</el-menu-item>-->
+						<!--<el-menu-item index="3" @click="linkToStadiumSysPage">场馆系统</el-menu-item>-->
+						<!--<el-menu-item index="4" @click="linkToPlatformAccountSysPage">平台账户系统</el-menu-item>-->
+						<!--<el-menu-item index="5">平台广告</el-menu-item>-->
+						<!--<el-menu-item index="6">消息系统</el-menu-item>-->
 					</el-menu>
 					<div class="hx-template-header-right">
 						<p class="hx-account align-center">田鑫鑫</p>
@@ -51,7 +51,7 @@
 						<el-submenu index="1">
 							<template slot="title">
 								<i class="el-icon-location"></i>
-								<span>导航一</span>
+								<span>商品管理</span>
 							</template>
 							<el-menu-item-group>
 								<template slot="title">分组一</template>
@@ -123,21 +123,180 @@
 	export default {
 		data () {
 			return {
+			  state : {
+			    menu : [
+            {
+              "id": "fad2a5ba847e11e79b871e1c9256fbfd",
+              "resourcesName": "供应系统",
+              "resourcesUrl": "/supplySystem",
+              "childResourcesEntityList": [
+                {
+                  "id": "69fea665847f11e79b871e1c9256fbfd",
+                  "resourcesName": "商品管理",
+                  "resourcesUrl": null,
+                  "childResourcesEntityList": [
+                    {
+                      "id": "c0ae58f1847f11e79b871e1c9256fbfd",
+                      "resourcesName": "分类管理",
+                      "resourcesUrl": "/supplySystem/commodityManagement/classifyManagement",
+                      "childResourcesEntityList": null
+                    },
+                    {
+                      "id": "c0ae5b02847f11e79b871e1c9256fbfd",
+                      "resourcesName": "领货日期",
+                      "resourcesUrl": "/supplySystem/commodityManagement/deliveryTakenDate",
+                      "childResourcesEntityList": null
+                    },
+                    {
+                      "id": "c0ae5b74847f11e79b871e1c9256fbfd",
+                      "resourcesName": "菜品管理",
+                      "resourcesUrl": "/supplySystem/commodityManagement/classifyManagement",
+                      "childResourcesEntityList": null
+                    },
+                    {
+                      "id": "067b0edbdb2911e796bb1e1c9256fbfd",
+                      "resourcesName": "上菜管理",
+                      "resourcesUrl": "/supplySystem/commodityManagement/classifyManagement",
+                      "childResourcesEntityList": null
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id":"a912a442a28b11e796bb1e1c9256fbfd",
+              "resourcesName":"库存",
+              "resourcesUrl":"/about",
+              "childResourcesEntityList":[
+                {
+                  "id":"84e7c71aa28c11e796bb1e1c9256fbfd",
+                  "resourcesName":"库存管理",
+                  "resourcesUrl":"/stock/management",
+                  "childResourcesEntityList":[
+                    {
+                      "id":"bfdfecdba28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"入库管理",
+                      "resourcesUrl":"/stock/management/warehouse-warrant",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"bfdfeef7a28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"出库管理",
+                      "resourcesUrl":"/stock/management/outbound-warrant",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"bfdfef54a28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"销售单发货",
+                      "resourcesUrl":"/stock/management/sales-order-delivery",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"bfdfef95a28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"结算联签收",
+                      "resourcesUrl":"/stock/management/billing-sign-up",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"bfdfeffda28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"货品调整",
+                      "resourcesUrl":"/stock/management/adjust-goods",
+                      "childResourcesEntityList":null
+                    }
+                  ]
+                },
+                {
+                  "id":"84e7ca4fa28c11e796bb1e1c9256fbfd",
+                  "resourcesName":"借支单管理",
+                  "resourcesUrl":"/stock/borrow-order",
+                  "childResourcesEntityList":[
+                    {
+                      "id":"bfdff03ca28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"借支单管理",
+                      "resourcesUrl":"/stock/borrow-order/list",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"bfdff077a28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"新增借支单",
+                      "resourcesUrl":"/stock/borrow-order/add",
+                      "childResourcesEntityList":null
+                    },
+                    {
+                      "id":"95ec477dca9b11e796bb1e1c9256fbfd",
+                      "resourcesName":"借支统计",
+                      "resourcesUrl":"/stock/borrow-order/statistical",
+                      "childResourcesEntityList":null
+                    }
+                  ]
+                },
+                {
+                  "id":"84e7ca90a28c11e796bb1e1c9256fbfd",
+                  "resourcesName":"期末关账",
+                  "resourcesUrl":"/stock/close-the-bill",
+                  "childResourcesEntityList":[
+                    {
+                      "id":"bfdff0e8a28d11e796bb1e1c9256fbfd",
+                      "resourcesName":"期末关账",
+                      "resourcesUrl":"/stock/close-the-bill/list",
+                      "childResourcesEntityList":null
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          menuActive : ''
+        },
 				dialogVisible : false
 			};
 		},
+    computed : {
+		  menu () {
+        return this.state.menu.map(val => ({
+          name : val.resourcesName,
+          path : val.resourcesUrl
+        }));
+      },
+      menuActive () {
+		    return '/' + this.$route.fullPath.split('/')[1];
+      }
+    },
 		methods : {
+      /**
+       * 菜单激活回调
+       * @param val
+       */
+      select (val) {
+
+      },
 			linkToLoginPage () {
 				this.$router.push({
 					name : 'login'
 				});
 			},
-			linkToAboutPage () {
+      // 进入供应中心路由
+      linkToSupplyCenterPage () {
 				this.$router.push({
 					name : 'about'
 				});
-			}
-		}
+			},
+      // 进入营房系统路由
+      linkToBarracksSysPage () {
+
+      },
+      // 进入场馆系统路由
+      linkToStadiumSysPage () {
+
+      },
+      // 进入平台账户路由
+      linkToPlatformAccountSysPage () {
+
+      },
+		},
+    created () {
+		  this.state.menuActive = '/' + this.$route.fullPath.split('/')[1];
+    }
 	};
 </script>
 
